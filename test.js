@@ -8,3 +8,5 @@ for (const key in object) {
 }
 
 console.log(typeof a);
+
+
