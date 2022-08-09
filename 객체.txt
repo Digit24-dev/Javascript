@@ -147,6 +147,64 @@ prototype 객체에 속성과 메소드를 추가하면 모든 객체(와 기본
     
   << 2.4 배열 내부에 어떤 문자열이 있는지 확인 >>
 
-   - indexOf()
+   - indexOf('thing')
 
-   
+   배열 내에서 'thing'을 찾아 인덱스를 반환한다. 없을 시에 '-1' 을 반환한다.
+
+   - contains('thing')
+
+   배열 내에서 'thing'을 찾아 Boolean 형태로 반환한다.
+
+
+   << 2.5 Number 객체 >>
+
+   - toFixed()
+   - isNaN()
+   - isFinite()
+
+
+   << 2.6 String 객체 >>
+
+   - trim() : 문자열 양쪽 끝의 공백 없앰
+   - split() : 문자열을 특정 기호로 자르기
+   - 속성 length
+
+
+   << 2.7 JSON 객체 >>
+
+   기본적으로 제공되는 내장 객체
+
+   - JSON.stringify : 자바스크립트 객체를 JSON 문자열로 변환할 때 사용.
+
+    JSON.stringify(data, null, 2)
+        ㄴ 2번째 파라미터 : 객체에서 어떤 속성만 선택해서 추출하고 싶을 때 사용.
+        ㄴ 3번째 파라미터 : 들여쓰기를 2칸으로 설정.
+
+
+    << 2.8 Math 객체 >>
+
+    - Math.random() : 0 이상 1 미만의 랜덤한 숫자를 출력
+
+
+    << 2.9 외부 Script 파일 읽어들이기 >>
+
+    HTML 파일과 Javascript 파일을 분리한다.
+    
+
+    <====================예시=======================>
+    [test.HTML]
+    <script src="test.js"></script>
+
+    [test.js]
+    console.log("hello")
+
+    <--- 출력 --->
+    hello
+
+    <====================끝=========================>
+
+
+
+    << 2.10 Lodash 라이브러리 >>
+
+    
