@@ -207,4 +207,89 @@ prototype 객체에 속성과 메소드를 추가하면 모든 객체(와 기본
 
     << 2.10 Lodash 라이브러리 >>
 
+    외부 라이브러리. 
+
+    -sortBy() 메소드
+
+        < _ 객체 >
+
+        _ 객체 안에는 많은 메소드를 담고 있다.
+
+        <====================예시=======================>
+            const books = [{
+                name: '1',
+                price: 1200,
+                publisher: '한빛'
+            },{
+                name: '2',
+                price: 1000,
+                publisher: '한빛'
+            },{
+                name: '3',
+                price: 2800,
+                publisher: '한빛'
+            },{
+                name: '4',
+                price: 4900,
+                publisher: '한빛'
+            }]
+
+            const output = _.sortBy(books, (book) => book.price )
+            console.log(JSON.stringify(output, null, 2))
+
+            <--- 출력 --->
+            [
+                {
+                    name: '2',
+                    price: 1000,
+                    publisher: '한빛'
+                },
+                {
+                    name: '1',
+                    price: 1200,
+                    publisher: '한빛'
+                },
+                {
+                    name: '3',
+                    price: 2800,
+                    publisher: '한빛'
+                },
+                {
+                    name: '4',
+                    price: 4900,
+                    publisher: '한빛'
+                }
+            ]
+            *price 로 정렬된다.
+        <====================끝=========================>
+
+
+ <<< 6.3 객체와 배열 고급 >>>
+
+  << 객체 내부에 특정 속성이 있는지 확인 하기. >>
+
+    <====================예시=======================>
     
+        if(object.name !== undefined){
+            있음
+        }else{
+            없음
+        }
+
+        if(object.name){
+            있음
+        }else{
+            없음
+        }
+
+        object.name || console.log('있음')
+
+    <====================끝=========================>
+
+ << 객체 기본 속성 지정하기 >>
+
+  <====================예시=======================>
+        
+        object.name = object.name || '디폴트 값'
+
+  <====================끝=========================>
