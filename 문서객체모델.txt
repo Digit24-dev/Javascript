@@ -46,3 +46,100 @@
  })
 
  
+
+  << 문서 객체 가져오기 >>
+
+ Document.body > 문서의 body 요소를 읽어들일 수 있다.
+ document.head
+ document.body
+ document.title
+
+ document.querySelector(선택자)     >> CSS 선택자
+ document.querySelectorAll(선택자)
+
+
+   <======= querySelector =======>
+   <script>
+   document.addEventListener('DOMContenLoaded', () =>{
+
+      const header = document.querySelector('h1')
+
+      header.textContent = 'HEADERS'
+      header.style.color = 'white'
+      header.style.backgroundColor = 'black'
+      header.style.padding = '10px'
+   })
+   </script>
+   <body>
+      <h1></h1>
+   </body>
+
+   <======= querySelectorAll ======>
+   <script>
+   document.addEventListener('DOMContenLoaded', () =>{
+
+      const headers = document.querySelectorAll('h1')
+
+      hearders.forEach((header) => {
+         header.textContent = 'HEADERS'
+         header.style.color = 'white'
+         header.style.backgroundColor = 'black'
+         header.style.padding = '10px'
+      })
+   })
+   </script>
+   <body>
+      <h1></h1>
+      <h1></h1>
+      <h1></h1>
+      <h1></h1>
+   </body>
+
+
+
+ << 글자 조작하기 >>
+
+  문서 객체.textContent : 입력된 문자열을 그대로 넣는다.
+  문서 객체.innerHTML   : HTML 형식으로 넣는다.
+
+   <script>
+   document.addEventListener('DOMContenLoaded', () => {
+      const a = document.querySelector('#a')
+      const b = document.querySelector('#b')
+
+      a.textContent = '<h1>textContent</h1>'
+      b.innerHTML = '<h1>innerHTML</h1>'
+   })
+   </script>
+   <body>
+      <div id="a"></div>
+      <div id="b"></div>
+   </body>
+
+
+   <--- 출력 --->
+   
+   <h1>textContent</h1>
+   innerHTML
+
+   <--- --->
+
+ << 속성 조작하기 >>
+
+  문서 객체.setAttribute(속성 이름, 값) : 특성 속성에 값을 지정.
+  문서 객체.getAttribute(속성 이름) : 특정 속성을 추출.
+
+
+<< 스타일 조작하기 >>
+
+[CSS 속성 이름]         [자바스크립트 style 속성 이름]
+background-color           backgroundColor
+text-align                 textAlign
+font-size                  fontSize
+
+h1.style['background-color']
+
+or
+
+h1.style.backgroundColor
+
