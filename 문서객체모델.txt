@@ -130,16 +130,52 @@
   문서 객체.getAttribute(속성 이름) : 특정 속성을 추출.
 
 
-<< 스타일 조작하기 >>
+ << 스타일 조작하기 >>
 
-[CSS 속성 이름]         [자바스크립트 style 속성 이름]
-background-color           backgroundColor
-text-align                 textAlign
-font-size                  fontSize
+ [CSS 속성 이름]         [자바스크립트 style 속성 이름]
+ background-color           backgroundColor
+ text-align                 textAlign
+ font-size                  fontSize
 
-h1.style['background-color']
+ h1.style['background-color']
 
-or
+ or
 
-h1.style.backgroundColor
+ h1.style.backgroundColor
 
+
+<< 문서 객체 생성하기 >>
+
+ - document.createElement()
+ 문서 객체를 생성.
+
+ - 부모 객체.appendChild(자식 객체)
+
+ ex) 7-1-8.html
+
+
+ << 문서 객체 이동하기 >>
+
+ appendChild() 메소드는 문서 객체를 이동할 때에도 사용할 수 있다. 문서 객체의 부모는 '언제나 하나'이어야 한다.
+ ex) 7-1-9.html
+
+
+ << 문서 객체 제거하기 >>
+ 
+  - 부모 객체.removeChild(자식 객체)
+
+  appendChild() 메소드 등으로 부모 객체와 이미 연결이 완료된 문서 객체의 경우 parentNode 속성으로 부모 객체에 접근이 가능하다.
+  일반적으로 어떤 문서 객체를 제거할 때에는 아래의 코드를 사용한다.
+
+  - 문서 객체.parentNode.removeChild(문서 객체)
+
+
+ << 이벤트 설정하기 >>
+
+ - 이벤트 연결하기
+ 문서 객체.addEventListener(이벤트 이름, 콜백 함수)
+
+ - 이벤트 연결 제거하기
+ 문서 객체.removeEventListener(이베느 이름, 이벤트 리스너)
+
+ex) 7-1-11, 7-1-12.html
