@@ -1,0 +1,68 @@
+[[ 7-2 이벤트 활용 ]]
+
+
+ 이벤트를 연결하는 방법을 '이벤트 모델'이라고 한다.
+
+ 표준 이벤트 모델
+  - addEventListener()
+
+ 고전 이벤트 모델
+  - document.body.onkeyup <-속성
+
+ 인라인 이벤트 모델
+  - const listener = (event) => {}
+  직접 HTML 요소에 넣어 사용.
+
+ 
+ << 이벤트 종류 >>
+
+ 1. 키보드 이벤트
+
+ - keydown
+ - keypress : 키가 입력되었을 때에 이벤트 발생 / 웹 브라우저에 따라 아시아권의 문자를 제대로 처리하지 못함.
+ - keyup
+
+ [속성]
+ code
+ keyCode
+ altKey
+ ctrlKey
+ shiftKey
+
+
+
+ 2. 이벤트 발생 객체
+
+ 여태까지의 이벤트 리스너를 사용할 때에는 한 번에 코드를 작성했지만,
+
+ 많은 코드를 작성하다 보면, 해당 스크립트/코드 조각 내에 없는 코드가 실행될 수 있다.
+
+ 이벤트를 발생한 객체를 찾기 위한 방식
+
+ - event.currentTarget
+    
+    const listener = (event) => {
+        const length = event.currentTarget.value.length
+        h1.textContent = `글자 수: ${length}`
+    }
+
+    document.addEventListener('DOMContenLoaded', () => {
+        const textarea = document.querySelector('textarea')
+        const h1 = document.querySelector('h1')
+        textarea.addEventListener('keyup', listener)
+    })
+
+ - this
+
+    document.addEventListener('DOMContenLoaded', () => {
+        const textarea = document.querySelector('textarea')
+        const h1 = document.querySelector('h1')
+
+        textarea.addEventListener('keyup', (event) => {
+            const length = textarea.value.length
+            h1.textContent = `글자 수: ${length}`
+        })
+    })
+
+ 이렇게 쓴다.
+ 
