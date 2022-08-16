@@ -67,4 +67,13 @@
  이렇게 쓴다.
  
 
+ << 글자 입력 양식 이벤트 >>
+
+ HTML 입력 양식 태그
+
+ - input
+ - textarea
+ - button
+ - select
+
  
