@@ -10,17 +10,19 @@
         students.push({ 이름: '겨울', 국어:87, 영어: 98, 수학: 88, 과학: 90})
         students.push({ 이름: '바다', 국어:87, 영어: 98, 수학: 88, 과학: 90})
 
-        function getSumOf(student){
-            return student.국어 + student.영어 + student.수학 + student.과학
-        }
+        for(const student of students){
+            student.getSum = function() {
+                return this.국어 + this.영어 + this.수학 + this.과학
+            }
 
-        function getAverageOf(student){
-            return getSumOf(student)/4
+            student.getAverage = function() {
+                return this.getSum() / 4
+            }
         }
 
         let output = '이름\t총점\t평균\n'
         for(const s of students){
-            output += `${s.이름}\t${getSumOf(s)}점\t${getAverageOf(s)}점\n`
+            output += `${s.이름}\t${s.getSum()}점\t${s.getAverage()}점\n`
         }
         console.log(output)
     </script>
