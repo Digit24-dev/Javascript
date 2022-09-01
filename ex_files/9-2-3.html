@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOMContentLoaded</title>
+    <script>
+        class Rectangle {
+            constructor (width, height) {
+                 this.width = width
+                 this.height = height
+            }
+
+            getPerimeter () {
+                return 2 * (this.width + this.height)
+            }
+
+            getArea () {
+                return this.width * this.height
+            }
+        }
+
+        class Square extends Rectangle{
+            constructor (length) {
+                super(length, length)
+            }
+        }
+        
+        const square = new Square(10)
+
+        console.log(square.getArea())
+        console.log(square.getPerimeter())
+
+    </script>
+    <body>
+        
+    </body>
+</head>
+</html> 

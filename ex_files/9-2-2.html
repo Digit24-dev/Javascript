@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOMContentLoaded</title>
+    <script>
+        class Rectangle {
+            constructor (width, height) {
+                 this.width = width
+                 this.height = height
+            }
+
+            getPerimeter () {
+                return 2 * (this.width + this.height)
+            }
+
+            getArea () {
+                return this.width * this.height
+            }
+        }
+
+        class Square {
+            constructor (length) {
+                this.length = length
+            }
+
+            getPerimeter () {
+                return 4 * this.length
+            }
+            
+            getArea() {
+                return this.length * this.length
+            }
+        }
+
+        const rectangle = new Rectangle(10, 20)
+        const square = new Square(10)
+
+        console.log(rectangle.getArea())
+        console.log(rectangle.getPerimeter())
+
+        console.log('정사각형')
+        console.log(square.getArea())
+        console.log(square.getPerimeter())
+
+    </script>
+    <body>
+        
+    </body>
+</head>
+</html> 
